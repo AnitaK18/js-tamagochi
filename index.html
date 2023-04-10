@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamagotchi</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="main-menu-screen">
+        <div class="menu">
+            <h1>Tamagotchi</h1>
+            <h3>Welcome to my little Tamagotchi game</h3>
+            <div class="menu-buttons">
+                <a href="#" id="action-menu-start-game">Start</a>
+                <a href="#" id="action-menu-settings">Settings</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-screen-settings">
+        <div class="settings">
+            <h2>Settings</h2>
+            <div class="settings-buttons">
+                <h3>Difficulty: <span id="difSet">Normal</span></h3>
+                <a href="#" id="action-settings-difficulty-hard">Hard</a>
+                <a href="#" id="action-settings-difficulty-normal">Normal</a>
+                <a href="#" id="action-settings-difficulty-easy">Easy</a>
+                <br>
+                <h3>Night mode: <span id="nightmode">off</span></h3>
+                <a href="#" id="nightmode-on">On</a>
+                <a href="#" id="nightmode-off">Off</a>
+                <br>
+                <a href="#" id="action-settings-back">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-screen">
+        <div class="tamagotchi">
+            <div class="hp">
+                <p>Sleep: <span id="sleep-hp"></span>%</p>
+                <p>Hunger: <span id="hunger-hp"></span>%</p>
+                <p>Play: <span id="play-hp"></span>%</p><br>
+                <p id="score-bar">Score: <span id="score"></span></p>
+            </div>
+
+            <p><span id="name"></span></p>
+            <div id="t-body">
+                <img scr="happy.gif" alt="happy">
+                <img scr="1.gif" alt="angry">
+                <img scr="sad.gif" alt="sad">
+                <img scr="dead.gif" alt="dead">
+
+            </div>
+
+            <div class="buttons">
+                <a href="#" id="action-sleep">Sleep</a>
+                <a href="#" id="action-feed">Feed</a>
+                <a href="#" id="action-play">Play</a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
