@@ -16,10 +16,14 @@ const nightModeOnBtn = document.querySelector("#nightmode-on");
 const sleepHp = document.querySelector("#sleep-hp");
 const hungerHp = document.querySelector("#hunger-hp");
 const playHp = document.querySelector("#play-hp");
+const energyHp = document.querySelector("#energy-hp");
+const skillLevelHp = document.querySelector("#skillLevel-hp");
 const scoreBar = document.querySelector("#score");
 const maxSleep = 300;
 const maxHunger = 300;
 const maxPlay = 300;
+const maxSkillLevel = 300;
+const maxEnergy = 300;
 
 let day = 20;
 
@@ -27,11 +31,14 @@ let day = 20;
 function Tamagotchi() {
   this.sleep = maxSleep;
   this.hunger = maxHunger;
-  this.play = maxPlay;
+    this.play = maxPlay;
+    this.energy = maxEnergy;
+    this.skillLevel = maxSkillLevel;
 }
 
 Tamagotchi.prototype.actionSleep = function() {
-    this.sleep+=40 / (day * 2)
+    this.sleep += 40 / (day * 2)
+    this.energy+=40 / (day * 2)
 };
 
 Tamagotchi.prototype.actionEat = function() {
@@ -39,7 +46,8 @@ Tamagotchi.prototype.actionEat = function() {
 };
 
 Tamagotchi.prototype.actionPlay = function() {
-	this.play+=80 / (day * 2)
+    this.play += 80 / (day * 2)
+    this.skillLevel+=40 / (day * 2)
 };
 
 Tamagotchi.prototype.tick = function() {
@@ -52,6 +60,8 @@ let tmgch = new Tamagotchi();
 let sleepHpCount;
 let hungerHpCount;
 let playHpCount;
+let energyHpCount;
+let skillLevelHpCount;
 let score = 0;
 
 sleepBtn.addEventListener("click", function() {
@@ -140,6 +150,8 @@ function startGame() {
         sleepHpCount = (tmgch.sleep / maxSleep * 100).toFixed(2);
         hungerHpCount = (tmgch.hunger / maxHunger * 100).toFixed(2);
         playHpCount = (tmgch.play / maxPlay * 100).toFixed(2);
+        energyHpCount = (tmgch.play / maxPlay * 100).toFixed(2);
+        skillLevelHpCount = (tmgch.play / maxPlay * 100).toFixed(2);
 
         
         score++;
@@ -150,8 +162,11 @@ function startGame() {
             playHpCount = 0;
             sleepHpCount = 0;
             hungerHpCount = 0;
+            skillLevelHpCount = 0;
+            energyHpCount = 0;
             clearInterval(coreUpdate);
-            alert('Your score: ' + score + '\n effect-Sad.innerHTML');
+            document.getElementById("effect-Dead").src = "dead.gif";
+            alert('Your score: ' + score);
         }
 
         if (tmgch.sleep >= (maxSleep + (maxSleep / 100 * 20))) {
@@ -165,6 +180,15 @@ function startGame() {
         if (tmgch.play >= (maxPlay + (maxPlay / 100 * 20))) {
             tmgch.play = maxPlay + (maxPlay / 100 * 20);
         }
+         if (tmgch.energy >= (maxEnergy + (maxEnergy / 100 * 20))) {
+            tmgch.energy = maxEnergy + (maxEnergy / 100 * 20);
+        }
+        if (tmgch.skillLevel >= (maxSkillLevel + (maxSkillLevel / 100 * 20))) {
+            tmgch.skillLevel = maxSkillLevel + (maxSkillLevel / 100 * 20);
+        }
+        if (tmgch.energy >= (maxEnergy + (maxEnergy / 100 * 20))) {
+            tmgch.energy = maxEnergy + (maxEnergy / 100 * 20);
+        }
 
         if ((tmgch.sleep / maxSleep * 100) > 100) {
             sleepHpCount = 100;
@@ -175,45 +199,55 @@ function startGame() {
         if ((tmgch.play / maxPlay * 100) > 100) {
             playHpCount = 100;
         }
+        if ((tmgch.energy / maxEnergy * 100) > 100) {
+            energyHpCount = 100;
+        }
+        if ((tmgch.skillLevel / maxSkillLevel * 100) > 100) {
+            skillLevelHpCount = 100;
+        }
 
         sleepHp.innerHTML = sleepHpCount;
         hungerHp.innerHTML = hungerHpCount;
         playHp.innerHTML = playHpCount;
+        energyHp.innerHTML = energyHpCount;
+        skillLevelHp.innerHTML = skillLevelHpCount;
 
         tmgch.tick();
         const effectSad = document.getElementById("effect-Sad");
         const effectHappy = document.getElementById("effect-Happy");
         const effectAngry = document.getElementById("effect-Angry");
-        if (sleepHpCount <= 10) {
-            document.getElementById("effect-Dead").src = "dead.gif";
-        }
-        else if (sleepHpCount <= 80) {
-            document.getElementById("effect-Sad").src = "sad.gif";
-        }
-        else if (sleepHpCount > 80) {
-            document.getElementById("effect-Happy").src = "happy.gif";
-    
-        }
-    
-        if (hungerHp <= 10) {
-            document.getElementById("effect-Dead").src = "dead.gif";
-        }
-        else if (hungerHp <= 80) {
+       if (sleepHpCount < 80) {
             document.getElementById("effect-Angry").src = "1.gif";
         }
-        else if (hungerHp > 80) {
+       else if (sleepHpCount > 80) {
+           document.getElementById("effect-Happy").src = "happy.gif";
+       }
+        else if (sleepHpCount > 10 && sleepHpCount < 50) {
+            document.getElementById("effect-Sad").src = "sad.gif";
+    
+        }
+    
+       if (hungerHpCount < 80) {
+            document.getElementById("effect-Angry").src = "1.gif";
+        }
+        else if (hungerHpCount > 80) {
             document.getElementById("effect-Happy").src = "happy.gif";
+    
+        }
+        else if (hungerHpCount > 10 && hungerHpCount < 50) {
+            document.getElementById("effect-Sad").src = "sad.gif";
     
         }
 
-        if (playHpCount <= 10) {
-            document.getElementById("effect-Dead").src = "dead.gif";
-        }
-        else if (playHpCount <= 80) {
-            document.getElementById("effect-Angry").scr = "1.gif";
+       if (playHpCount < 80) {
+            document.getElementById("effect-Angry").src = "1.gif";
         }
         else if (playHpCount > 80) {
             document.getElementById("effect-Happy").src = "happy.gif";
+    
+        }
+        else if (playHpCount > 10 && playHpCount < 50) {
+            document.getElementById("effect-Sad").src = "sad.gif";
     
         }
     
