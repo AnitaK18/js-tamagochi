@@ -48,7 +48,7 @@ h3 {
     text-align: center;
 }
 
-.settings-buttons a {
+.settings-buttons button {
     display: inline-block;
     font-size: 30px;
     background-color: transparent;
@@ -62,7 +62,7 @@ h3 {
     font-family: 'DM Mono', monospace;
 }
 
-.settings-buttons a:hover {
+.settings-buttons button:hover {
     background-color: #131313;
     color: #fafafa;
 }
@@ -78,6 +78,7 @@ h3 {
     position: absolute;
     display: block;
     width: 100%;
+    height: auto;
     top: 50vh;
     transform: translateY(-50%);
     font-size: 80px;
@@ -87,33 +88,35 @@ h3 {
 
 
 t-body {
-    height: 50%;
-    width: auto;
+    width: 50%;
+    vertical-align: center;
 }
-.effect-Happy .effect-Sad .effect-Angry{
-    height: 40%;
-        width: auto;
+.effect-Happy{
+    width: 10vh;
+    vertical-align: center;
 }
 
-#name {
+.name {
     display: inline-block;
-    margin-bottom: 50px;
-    color: #fff;
+    margin-bottom: 20px;
+    color: #000000;
     padding: 5px 10px;
-    font-size: 30px;
+    font-size: 20px;
     background-color: #131313;
     font-family: 'DM Mono', monospace;
     font-weight: 500;
+    text-align: center;
+    vertical-align: middle;
 }
 
-.buttons a,
-.menu-buttons a {
+.buttons button,
+.menu-buttons button {
     display: inline-block;
     font-size: 40px;
     background-color: transparent;
     border: 2px solid #131313;
     padding: 10px 20px;
-    margin: 100px 20px 0px 20px;
+    margin: 10px 20px 0px 20px;
     transition: background-color .1s;
     text-decoration: none;
     color: #131313;
@@ -122,16 +125,27 @@ t-body {
     transition: background-color .1s, color .1s;
 }
 
-.buttons a:hover,
-.menu-buttons a:hover {
+.buttons button:hover,
+.menu-buttons button:hover {
     background-color: #131313;
     color: #fafafa;
 }
 
-.buttons,
-.menu-buttons {
-    width: 100%;
+.buttons ,
+.menu-buttons button{
     text-align: center;
+    display: inline-block;
+        font-size: 40px;
+        background-color: transparent;
+        padding: 10px 20px;
+        margin: 10px 20px 0px 20px;
+        transition: background-color .1s;
+        text-decoration: none;
+        color: #131313;
+        font-weight: 300;
+        font-family: 'DM Mono', monospace;
+        transition: background-color .1s, color .1s;
+    
 }
 
 .hp {
@@ -155,9 +169,9 @@ t-body {
         font-size: 20px;
     }
 
-    .buttons a,
-    .menu-buttons a,
-    .settings-buttons a {
+    .buttons ,
+    .menu-buttons ,
+    .settings-buttons  {
         font-size: 30px;
     }
 
@@ -176,9 +190,9 @@ t-body {
         display: block;
     }
 
-    .buttons a,
-    .menu-buttons a,
-    .settings-buttons a {
+    .buttons ,
+    .menu-buttons ,
+    .settings-buttons  {
         font-size: 20px;
         margin: 20px 5px 0px 5px;
     }
@@ -198,9 +212,9 @@ t-body {
         display: block;
     }
 
-    .buttons a,
-    .menu-buttons a,
-    .settings-buttons a {
+    .buttons ,
+    .menu-buttons ,
+    .settings-buttons {
         font-size: 20px;
         margin: 20px 2px 0px 2px;
     }
@@ -227,12 +241,12 @@ body.nightmode-on {
     color: #fafafa;
 }
 
-body.nightmode-on .settings-buttons a {
+body.nightmode-on .settings-buttons button {
     color: #fafafa;
     border: 2px solid #fafafa;
 }
 
-body.nightmode-on .settings-buttons a:hover {
+body.nightmode-on .settings-buttons button:hover {
     background-color: #fafafa;
     color: #111;
 }
@@ -242,14 +256,14 @@ body.nightmode-on #name {
     background-color: #fafafa;
 }
 
-body.nightmode-on .buttons a,
-body.nightmode-on .menu-buttons a {
+body.nightmode-on .buttons button,
+body.nightmode-on .menu-buttons button {
     color: #fafafa;
     border: 2px solid #fafafa;
 }
 
-body.nightmode-on .buttons a:hover,
-body.nightmode-on .menu-buttons a:hover {
+body.nightmode-on .buttons button:hover,
+body.nightmode-on .menu-buttons button:hover {
     background-color: #fafafa;
     color: #111;
 }
