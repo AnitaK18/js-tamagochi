@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tamagotchi</title>
     <link rel="stylesheet" href="style.css">
-
+    <script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
@@ -16,8 +16,8 @@
             <h1>Tamagotchi</h1>
             <h3>Welcome to my little Tamagotchi game</h3>
             <div class="menu-buttons">
-                <a href="#" id="action-menu-start-game">Start</a>
-                <a href="#" id="action-menu-settings">Settings</a>
+                <button id="action-menu-start-game">Start</button>
+                <button id="action-menu-settings">Settings</button>
             </div>
         </div>
     </div>
@@ -27,46 +27,48 @@
             <h2>Settings</h2>
             <div class="settings-buttons">
                 <h3>Difficulty: <span id="difSet">Normal</span></h3>
-                <a href="#" id="action-settings-difficulty-hard">Hard</a>
-                <a href="#" id="action-settings-difficulty-normal">Normal</a>
-                <a href="#" id="action-settings-difficulty-easy">Easy</a>
+
+                <button id="action-settings-difficulty-hard">Hard</button>
+                <button id="action-settings-difficulty-normal">Normal</button>
+                <button id="action-settings-difficulty-easy">Easy</button>
+
                 <br>
                 <h3>Night mode: <span id="nightmode">off</span></h3>
-                <a href="#" id="nightmode-on">On</a>
-                <a href="#" id="nightmode-off">Off</a>
+                <button id="nightmode-on">On</button>
+                <button id="nightmode-off">Off</button>
                 <br>
-                <a href="#" id="action-settings-back">Back</a>
+                <button id="action-settings-back">Back</button>
             </div>
         </div>
     </div>
 
     <div class="game-screen">
         <div class="tamagotchi">
+
+            <p><span id="name"></span></p>
+            <div id="t-body">
+                <img id="effect-Happy" scr="happy.gif">
+                <img id="effect-Angry" scr="1.gif" >
+                <img id="effect-Sad" scr="sad.gif" >
+                <img id="effect-Dead" scr="dead.gif" >
+            </div>
             <div class="hp">
-                <p>Sleep: <span id="sleep-hp"></span>%</p>
+                <p>Energy: <span id="sleep-hp"></span>%</p>
+                <p>SkillLevel: <span id="energy-hp"></span>%</p>
+                <p>Sleep: <span id="skillLevel-hp"></span>%</p>
                 <p>Hunger: <span id="hunger-hp"></span>%</p>
                 <p>Play: <span id="play-hp"></span>%</p><br>
                 <p id="score-bar">Score: <span id="score"></span></p>
             </div>
 
-            <p><span id="name"></span></p>
-            <div id="t-body">
-                <img scr="happy.gif" alt="happy">
-                <img scr="1.gif" alt="angry">
-                <img scr="sad.gif" alt="sad">
-                <img scr="dead.gif" alt="dead">
-
-            </div>
-
             <div class="buttons">
-                <a href="#" id="action-sleep">Sleep</a>
-                <a href="#" id="action-feed">Feed</a>
-                <a href="#" id="action-play">Play</a>
+                <button id="action-sleep">Sleep</button>
+                <button id="action-feed">Feed</button>
+                <button id="action-play">Play</button>
             </div>
         </div>
     </div>
     </div>
-    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
