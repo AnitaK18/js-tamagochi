@@ -140,4 +140,123 @@ body {
     margin: 10px 20px 0px 20px;
     transition: background-color .1s;
     text-decoration: none;
-    color: #131313
+    color: #131313;
+    font-weight: 300;
+    font-family: 'DM Mono', monospace;
+
+    &:hover {
+        background-color: #131313;
+        color: #fafafa;
+    }
+
+    &,
+    &.menu-buttons,
+    &.settings-buttons {
+        text-align: center;
+        display: inline-block;
+        font-size: 40px;
+        background-color: transparent;
+        padding: 10px 20px;
+        margin: 10px 20px 0px 20px;
+        transition: background-color .1s;
+        text-decoration: none;
+        color: #131313;
+        font-weight: 300;
+        font-family: 'DM Mono', monospace;
+
+        &:hover {
+            background-color: #131313;
+            color: #fafafa;
+        }
+    }
+}
+
+.hp {
+    font-family: 'DM Mono', monospace;
+    font-weight: 300;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+
+    span {
+        font-weight: 500;
+    }
+
+    p {
+        display: inline;
+    }
+}
+
+@media (max-width: 860px) {
+    .hp {
+        font-size: 20px;
+    }
+
+    .buttons,
+    .menu-buttons,
+    .settings-buttons {
+        font-size: 30px;
+    }
+
+    #name {
+        font-size: 20px;
+    }
+
+    #t-body {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 540px) {
+    .hp {
+        p {
+            font-size: 20px;
+            display: block;
+        }
+
+        .buttons,
+        .menu-buttons,
+        .settings-buttons {
+            font-size: 20px;
+            margin: 20px 5px 0px 5px;
+        }
+
+        #name {
+            font-size: 20px;
+        }
+
+        #t-body {
+            font-size: 40px;
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .hp {
+        p {
+            font-size: 20px;
+            display: block;
+        }
+
+        .buttons,
+        .menu-buttons,
+        .settings-buttons {
+            font-size: 20px;
+            margin: 20px 2px 0px 2px;
+        }
+
+        #name {
+            font-size: 20px;
+        }
+
+        #t-body {
+            height: 300px;
+            width: auto;
+        }
+
+        .tamagotchi {
+            top: 120px;
+            transform: translateY(0);
+        }
+    }
+}
